@@ -1,0 +1,39 @@
+{
+  "name": "pocket/phquery",
+  "description": "A PHP DOM traversal library",
+  "keywords": [
+    "php dom traversal",
+    "php jquery"
+  ],
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ext-json": "*",
+    "ext-libxml": "*",
+    "ext-zip": "*",
+    "illuminate/filesystem": "^11.0",
+    "laravel/dusk": "^8.0",
+    "phpunit/phpunit": "^11.2",
+    "symfony/css-selector": "^7.1",
+    "symfony/dom-crawler": "^7.1",
+    "symfony/var-dumper": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pocket\\Phquery\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
