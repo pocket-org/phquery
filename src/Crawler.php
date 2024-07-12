@@ -1,6 +1,6 @@
 <?php
 
-namespace Pocket\Phquery;
+namespace Procket\Phquery;
 
 use InvalidArgumentException;
 use Symfony\Component\DomCrawler\Crawler as BaseCrawler;

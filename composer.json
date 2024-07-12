@@ -1,17 +1,11 @@
 {
-  "name": "pocket/phquery",
+  "name": "procket/phquery",
   "description": "A PHP DOM traversal library",
   "keywords": [
     "php dom traversal",
     "php jquery"
   ],
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../*"
-    }
-  ],
   "require": {
     "php": "^8.2",
     "ext-json": "*",
@@ -26,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Pocket\\Phquery\\": "src/"
+      "Procket\\Phquery\\": "src/"
     }
   },
   "config": {

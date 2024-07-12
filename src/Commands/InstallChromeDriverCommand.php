@@ -1,6 +1,6 @@
 <?php
 
-namespace Pocket\Phquery\Commands;
+namespace Procket\Phquery\Commands;
 
 use Composer\InstalledVersions;
 use Exception;

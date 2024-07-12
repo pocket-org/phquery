@@ -8,7 +8,7 @@ use Symfony\Component\Console\Command\Command;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$version = InstalledVersions::getVersion('pocket/phquery');
+$version = InstalledVersions::getVersion('procket/phquery');
 $consoleApp = new ConsoleApp('phquery', $version);
 
 $filesystem = new Filesystem();
@@ -17,7 +17,7 @@ foreach ($allCommandFiles as $file) {
     if (strtolower($file->getExtension()) !== 'php') {
         continue;
     }
-    $class = '\\Pocket\\Phquery\\Commands\\' . $file->getFilenameWithoutExtension();
+    $class = '\\Procket\\Phquery\\Commands\\' . $file->getFilenameWithoutExtension();
     if (is_subclass_of($class, Command::class)) {
         $consoleApp->add(new $class);
     }

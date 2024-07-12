@@ -1,6 +1,6 @@
 <?php
 
-namespace Pocket\Phquery;
+namespace Procket\Phquery;
 
 use Closure;
 use Facebook\WebDriver\Chrome\ChromeOptions;
@@ -41,7 +41,7 @@ class Chrome
     /**
      * Create browser instances.
      *
-     * @param Closure $callback function (\Pocket\Phquery\Browser $first, \Pocket\Phquery\Browser $second, ...) {}
+     * @param Closure $callback function (\Procket\Phquery\Browser $first, \Procket\Phquery\Browser $second, ...) {}
      * @return mixed|void Returns the return value of the callback closure.
      * @throws Throwable
      */

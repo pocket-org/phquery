@@ -1,6 +1,6 @@
 <?php
 
-namespace Pocket\Phquery;
+namespace Procket\Phquery;
 
 use Facebook\WebDriver\Remote\RemoteWebElement;
 use Facebook\WebDriver\WebDriverAlert;
