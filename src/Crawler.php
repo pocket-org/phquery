@@ -130,4 +130,35 @@ class Crawler extends BaseCrawler
 
         return $owner->saveXML($node, $options);
     }
+
+    /**
+     * Returns an array of the inner text that is the direct descendent of the current node, excluding any child nodes.
+     *
+     * Unlike {@see static::innerText() innerText()}, it only returns the first text node.
+     * Please refer to the {@link https://symfony.com/doc/current/components/dom_crawler.html#accessing-node-values documentation} to see the differences.
+     *
+     * @param bool $normalizeWhitespace Whether whitespaces should be trimmed and normalized to single spaces
+     * @return array
+     */
+    public function innerTexts(bool $normalizeWhitespace = true): array
+    {
+        $texts = [];
+
+        foreach ($this->getNode(0)->childNodes as $childNode) {
+            if (\XML_TEXT_NODE !== $childNode->nodeType && \XML_CDATA_SECTION_NODE !== $childNode->nodeType) {
+                continue;
+            }
+            if (!$normalizeWhitespace) {
+                $texts[] = $childNode->nodeValue;
+            } else if ('' !== trim($childNode->nodeValue)) {
+                $texts[] = trim(preg_replace(
+                    "/(?:[ \n\r\t\x0C]{2,}+|[\n\r\t\x0C])/",
+                    ' ',
+                    $childNode->nodeValue
+                ), " \n\r\t\x0C");
+            }
+        }
+
+        return $texts;
+    }
 }
